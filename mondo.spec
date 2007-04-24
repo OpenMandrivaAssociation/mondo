@@ -8,7 +8,7 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa para los usuarios de Linux por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	2.21
+Version:	2.22
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	%mkrel 1
 License:	GPL
@@ -79,5 +79,4 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %{_datadir}/%{name}
 %{_mandir}/man8/*
 
-
-
+%changelog
