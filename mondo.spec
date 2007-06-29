@@ -10,7 +10,7 @@ Summary(sp):	Un programa para los usuarios de Linux por crear una CD/cinta de re
 Name:		mondo
 Version:	2.23
 Packager:	Bruno Cornec <bcornec@mandriva.org>
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
@@ -20,7 +20,7 @@ BuildRequires:	newt-devel >= 0.50
 ExcludeArch:	ppc
 Obsoletes:	libmondo
 Provides:	libmondo
-Requires:	mindi 
+Requires:	mindi, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord
 %ifarch ia64
 Requires:	elilo, parted
 %else
