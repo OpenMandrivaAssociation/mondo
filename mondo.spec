@@ -1,5 +1,5 @@
 #
-# $Id: mondo.spec 1019 2006-12-31 10:25:33Z bruno $
+# $Id: mondo.spec 1510 2007-06-20 10:12:34Z bruno $
 #
 
 Summary:	A program which a Linux user can utilize to create a rescue/restore CD/tape
@@ -8,7 +8,7 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa para los usuarios de Linux por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	2.23
+Version:	2.24
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	%mkrel 4
 License:	GPL
@@ -20,7 +20,7 @@ BuildRequires:	newt-devel >= 0.50
 ExcludeArch:	ppc
 Obsoletes:	libmondo
 Provides:	libmondo
-Requires:	mindi, bzip2 >= 0.9, afio, mkisofs, binutils, buffer, cdrecord
+Requires:	mindi, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord, 
 %ifarch ia64
 Requires:	elilo, parted
 %else
@@ -65,6 +65,7 @@ make %{?_smp_mflags} VERSION=%{version}
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
+mkdir -p $RPM_BUILD_ROOT/%{_var}/cache/%{name}
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
@@ -78,5 +79,6 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %{_sbindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man8/*
+%{_var}/cache/%{name}
 
 %changelog
