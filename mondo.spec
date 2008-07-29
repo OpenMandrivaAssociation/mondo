@@ -10,7 +10,7 @@ Summary(sp):	Un programa para los usuarios de Linux por crear una CD/cinta de re
 Name:		mondo
 Version:	2.24
 Packager:	Bruno Cornec <bcornec@mandriva.org>
-Release:	%mkrel 4
+Release:	%mkrel 6
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
