@@ -1,26 +1,25 @@
-#
-# $Id: mondo.spec 1510 2007-06-20 10:12:34Z bruno $
+# $Id: mondo.spec 1892 2008-03-22 00:57:27Z bruno $
 #
 
-Summary:	A program which a Linux user can utilize to create a rescue/restore CD/tape
-Summary(fr):	Un programme pour les utilisateurs de Linux pour créer un CD/tape de sauvegarde/restauration
+Summary:	A program to create a rescue/restore CD/tape
+Summary(fr):	Un programme pour crÃ©er un media de sauvegarde/restauration
 Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
-Summary(sp):	Un programa para los usuarios de Linux por crear una CD/cinta de restoracion/rescate
+Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	2.24
+Version:	2.28
 Packager:	Bruno Cornec <bcornec@mandriva.org>
-Release:	%mkrel 6
+Release:	%mkrel 1
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
 Source:		ftp://ftp.mondorescue.org/src/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
-BuildRequires:	newt-devel >= 0.50
+BuildRequires:	newt-devel >= 0.50, gcc-c++
 ExcludeArch:	ppc
 Obsoletes:	libmondo
 Provides:	libmondo
-Requires:	mindi, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord, 
+Requires:	mindi >= 2.0.2, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord
 %ifarch ia64
 Requires:	elilo, parted
 %else
@@ -35,10 +34,10 @@ damaged system, as well as deploy similar or less similar systems.
 %description -l fr
 Objectif
 """"""""
-Mondo est une solution GPL de sauvegarde en cas de désastre pour 
-créer des médias (CD, DVD, bande, images réseau) qui peuvent être 
-utilisés pour redéployer le système endomangé, aussi bien que des 
-systèmes similaires, ou moins similaires.
+Mondo est une solution GPL de sauvegarde en cas de dÃ©sastre pour 
+crÃ©er des mÃ©dias (CD, DVD, bande, images rÃ©seau) qui peuvent Ãªtre 
+utilisÃ©s pour redÃ©ployer le systÃ¨me endomangÃ©, aussi bien que des 
+systÃ¨mes similaires, ou moins similaires.
 
 %description -l it
 Scopo
@@ -72,8 +71,8 @@ mkdir -p $RPM_BUILD_ROOT/%{_var}/cache/%{name}
 
 %files
 %defattr(-,root,root)
-%doc ChangeLog svn.log
-%doc INSTALL COPYING README TODO AUTHORS NEWS
+%doc ChangeLog 
+%doc INSTALL COPYING README* TODO AUTHORS NEWS*
 %doc docs/en/mondorescue-howto.html docs/en/mondorescue-howto.pdf
 
 %{_sbindir}/*
