@@ -14,6 +14,7 @@ License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
 Source:		ftp://ftp.mondorescue.org/src/%{name}-%{version}.tar.bz2
+Patch0:		mondo-2.2.9.fixgcc.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
 BuildRequires:	newt-devel >= 0.50, gcc-c++
 ExcludeArch:	ppc
@@ -56,6 +57,7 @@ con cintas y NFS, tambien.
 
 %prep
 %setup -q -n %name-%{version}
+%patch0
 
 %build
 %configure
