@@ -1,3 +1,4 @@
+#
 # $Id: mondo.spec 1892 2008-03-22 00:57:27Z bruno $
 #
 
@@ -7,20 +8,19 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	2.28
+Version:	2.29.1
+%define upstreamv	2.2.9.1
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	%mkrel 1
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
-Source:		ftp://ftp.mondorescue.org/src/%{name}-%{version}.tar.bz2
-Patch0:		mondo-2.2.9.fixgcc.patch
+Source:		ftp://ftp.mondorescue.org/src/%{name}-%{upstreamv}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
-BuildRequires:	newt-devel >= 0.50, gcc-c++
+BuildRequires:	newt-devel >= 0.50, gcc-c++, autoconf, automake, libtool
 ExcludeArch:	ppc
-Obsoletes:	libmondo
-Provides:	libmondo
-Requires:	mindi >= 2.0.2, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord
+Obsoletes: libmondo
+Requires:	mindi >= 2.0.2, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord,  
 %ifarch ia64
 Requires:	elilo, parted
 %else
@@ -56,24 +56,24 @@ de restoracion/rescate (o CDs, si su instalacion es >2GO aprox.).  Funciona
 con cintas y NFS, tambien.
 
 %prep
-%setup -q -n %name-%{version}
-%patch0
+%setup -q -n %{name}-%{upstreamv}
 
 %build
 %configure
 make %{?_smp_mflags} VERSION=%{version}
 
 %install
-%{__rm} -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 mkdir -p $RPM_BUILD_ROOT/%{_var}/cache/%{name}
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
 %doc ChangeLog 
+#svn.log
 %doc INSTALL COPYING README* TODO AUTHORS NEWS*
 %doc docs/en/mondorescue-howto.html docs/en/mondorescue-howto.pdf
 
