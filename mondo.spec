@@ -59,7 +59,7 @@ con cintas y NFS, tambien.
 %setup -q -n %{name}-%{upstreamv}
 
 %build
-%configure
+%configure2_5x
 make %{?_smp_mflags} VERSION=%{version}
 
 %install
