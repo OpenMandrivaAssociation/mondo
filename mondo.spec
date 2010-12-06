@@ -11,7 +11,7 @@ Name:		mondo
 Version:	2.29.3
 %define upstreamv	2.2.9.3
 Packager:	Bruno Cornec <bcornec@mandriva.org>
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
