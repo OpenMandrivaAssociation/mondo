@@ -8,8 +8,8 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	2.29.4
-%define upstreamv	2.2.9.4
+Version:	2.29.5
+%define upstreamv	2.2.9.5
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	%mkrel 1
 License:	GPL
