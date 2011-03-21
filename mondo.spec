@@ -32,29 +32,6 @@ Mondo is a GPL disaster recovery solution to create backup media
 (CD, DVD, tape, network images) that can be used to redeploy the 
 damaged system, as well as deploy similar or less similar systems.
 
-%description -l fr
-Objectif
-""""""""
-Mondo est une solution GPL de sauvegarde en cas de désastre pour 
-créer des médias (CD, DVD, bande, images réseau) qui peuvent être 
-utilisés pour redéployer le système endomangé, aussi bien que des 
-systèmes similaires, ou moins similaires.
-
-%description -l it
-Scopo
-"""""
-Mondo e' un programma che permette a qualsiasi utente Linux 
-di creare un cd di rescue/restore (o piu' cd qualora l'installazione 
-dovesse occupare piu' di 2Gb circa). Funziona con gli azionamenti di
-nastro, ed il NFS, anche.
-
-%description -l sp
-Objectivo
-"""""""""
-Mondo es un programa que permite cualquier usuario de Linux a crear una CD
-de restoracion/rescate (o CDs, si su instalacion es >2GO aprox.).  Funciona 
-con cintas y NFS, tambien.
-
 %prep
 %setup -q -n %{name}-%{upstreamv}
 
