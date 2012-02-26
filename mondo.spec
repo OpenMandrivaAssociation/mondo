@@ -32,7 +32,7 @@ Mondo is a GPL disaster recovery solution to create backup media
 damaged system, as well as deploy similar or less similar systems.
 
 %prep
-%setup -q -n %{name}-%{upstreamv}
+%setup -q
 
 %build
 %configure2_5x
