@@ -8,19 +8,18 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	2.29.5
-%define upstreamv	2.2.9.5
+Version:	3.0.1
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	%mkrel 1
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
-Source:		ftp://ftp.mondorescue.org/src/%{name}-%{upstreamv}.tar.gz
+Source:		ftp://ftp.mondorescue.org/src/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
 BuildRequires:	newt-devel >= 0.50, gcc-c++, autoconf, automake, libtool
 ExcludeArch:	ppc
 Obsoletes: libmondo
-Requires:	mindi >= 2.0.7, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord,  
+Requires:	mindi >= 2.1.1, bzip2 >= 0.9, afio, mkisofs, binutils, newt >= 0.50, buffer, cdrecord,  
 %ifarch ia64
 Requires:	elilo, parted
 %else
