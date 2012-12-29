@@ -8,13 +8,13 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	3.0.1
+Version:	3.0.2
 Packager:	Bruno Cornec <bcornec@mandriva.org>
-Release:	%mkrel 1
+Release:	1
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
-Source:		ftp://ftp.mondorescue.org/src/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.mondorescue.org:21/src/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
 BuildRequires:	newt-devel >= 0.50, gcc-c++, autoconf, automake, libtool
 ExcludeArch:	ppc
@@ -39,12 +39,8 @@ damaged system, as well as deploy similar or less similar systems.
 make %{?_smp_mflags} VERSION=%{version}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make DESTDIR=$RPM_BUILD_ROOT install
-mkdir -p $RPM_BUILD_ROOT/%{_var}/cache/%{name}
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+make DESTDIR=%{buildroot} install
+mkdir -p %{buildroot}/%{_var}/cache/%{name}
 
 %files
 %defattr(-,root,root)
@@ -240,7 +236,7 @@ rm -rf $RPM_BUILD_ROOT
 - Replaced all occurrences of egrep with 'grep -E' and of fgrep with 'grep -F' (Andree Leidenfrost)
 - Optimize grep usage - fixes Debian bug #222052 (Andree Leidenfrost)
 - Avoid false alerts about growisofs not running under sudo (Andree Leidenfrost)
-- Increase PPCFG_RAMDISK_SIZE to 350 MB (Thomas Börkel/Bruno Cornec)
+- Increase PPCFG_RAMDISK_SIZE to 350 MB (Thomas BÃ¶rkel/Bruno Cornec)
 - Removed useless mondo-makefilelist (Andree Leidenfrost)
 - Fix a segmentation fault in parse_mdstat() (Andree Leidenfrost)
 - Fix gcc 4.1.2 warnings (Andree Leidenfrost)
@@ -272,7 +268,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Fri Mar 10 2006 Bruno Cornec <bruno@mondorescue.org> 2.0.7-1.20060mdk
 - Updated to 2.0.7
-- useless cat, sort|uniq commands removed (Bruno Cornec/Sébastien Aperghis-Tramoni)
+- useless cat, sort|uniq commands removed (Bruno Cornec/SÃ©bastien Aperghis-Tramoni)
 - Doc cleanup (Andree Leidenfrost)
 - Add the actual  to messages after calls to function is_this_a_valid_disk_format() about unsupported formats.  (Andree Leidenfrost)
 - Abort|Warn when one of the include|exclude dirs (-I|-E) does not exist (Bruno Cornec/Jeffs)
@@ -313,7 +309,7 @@ rm -rf $RPM_BUILD_ROOT
 - interactive mode now asks for image size and prefix in NFS mode (Gallig Renaud/Bruno Cornec)
 - iso-prefix should be read in iso mode even when -H not given (Stan Benoit)
 - VERSION/RELEASE Tag added (Bruno Cornec)
-- many code cleanup, small fixes, PXE/NFS code improvements (Sébastien Aperghis-Tramoni/Bruno Cornec)
+- many code cleanup, small fixes, PXE/NFS code improvements (SÃ©bastien Aperghis-Tramoni/Bruno Cornec)
 
 * Sat Nov 19 2005 Bruno Cornec <bruno@mondorescue.org> 2.05-1.20060mdk
 - Updated to 2.05
@@ -461,4 +457,5 @@ rm -rf $RPM_BUILD_ROOT
 - fixed "Can't backup if ramdisk not mounted" bug
 - try to work around eccentricities of multi-CD drive PCs
 - misc clean-ups (Steve Hindle)
+
 
