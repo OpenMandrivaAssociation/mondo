@@ -8,7 +8,7 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	3.0.2
+Version:	3.0.3
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	1
 License:	GPL
@@ -457,5 +457,6 @@ mkdir -p %{buildroot}/%{_var}/cache/%{name}
 - fixed "Can't backup if ramdisk not mounted" bug
 - try to work around eccentricities of multi-CD drive PCs
 - misc clean-ups (Steve Hindle)
+
 
 
