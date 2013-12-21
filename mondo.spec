@@ -8,14 +8,13 @@ Summary(it):	Un programma per utenti Linux per creare un CD/tape di rescue
 Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 
 Name:		mondo
-Version:	3.0.3
+Version:	3.0.4
 Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	1
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
-Source:		ftp://ftp.mondorescue.org:21/src/%{name}-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
+Source:		ftp://ftp.mondorescue.org/src/%{name}-%{version}.tar.gz
 BuildRequires:	newt-devel >= 0.50, gcc-c++, autoconf, automake, libtool
 ExcludeArch:	ppc
 Obsoletes: libmondo
@@ -43,7 +42,6 @@ make DESTDIR=%{buildroot} install
 mkdir -p %{buildroot}/%{_var}/cache/%{name}
 
 %files
-%defattr(-,root,root)
 %doc ChangeLog 
 #svn.log
 %doc INSTALL COPYING README* TODO AUTHORS NEWS*
@@ -457,6 +455,7 @@ mkdir -p %{buildroot}/%{_var}/cache/%{name}
 - fixed "Can't backup if ramdisk not mounted" bug
 - try to work around eccentricities of multi-CD drive PCs
 - misc clean-ups (Steve Hindle)
+
 
 
 
