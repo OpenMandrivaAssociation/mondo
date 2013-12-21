@@ -46,6 +46,9 @@ mkdir -p %{buildroot}/%{_var}/cache/%{name}
 #svn.log
 %doc INSTALL COPYING README* TODO AUTHORS NEWS*
 %doc docs/en/mondorescue-howto.html docs/en/mondorescue-howto.pdf
+%{_libdir}/mondo/test/mrtest_mountlist
+%{_libdir}/mondo/test/mrtest_stresc
+%{_libdir}/mondo/test/mrtest_truncname
 
 %{_sbindir}/*
 %{_datadir}/%{name}
