@@ -10,7 +10,7 @@ Summary(sp):	Un programa por crear una CD/cinta de restoracion/rescate
 Name:		mondo
 Version:	3.0.3
 Packager:	Bruno Cornec <bcornec@mandriva.org>
-Release:	1
+Release:	2
 License:	GPL
 Group:		Archiving/Backup
 Url:		http://www.mondorescue.org
