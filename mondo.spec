@@ -13,7 +13,7 @@ Packager:	Bruno Cornec <bcornec@mandriva.org>
 Release:	2
 License:	GPL
 Group:		Archiving/Backup
-Url:		http://www.mondorescue.org
+Url:		https://www.mondorescue.org
 Source:		ftp://ftp.mondorescue.org:21/src/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
 BuildRequires:	newt-devel >= 0.50, gcc-c++, autoconf, automake, libtool
