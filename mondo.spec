@@ -16,6 +16,8 @@ Group:		Archiving/Backup
 Url:		https://www.mondorescue.org
 Source:		ftp://ftp.mondorescue.org:21/src/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	newt-devel >= 0.50, gcc-c++, autoconf, automake, libtool
 ExcludeArch:	ppc
 Obsoletes: libmondo
